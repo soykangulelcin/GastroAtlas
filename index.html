@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🍽️ GastroAtlas</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="header-container">
+        <h1>🍽️ GastroAtlas <span>// Dünya Mutfakları Veri Tabanı</span></h1>
+        <button id="theme-toggle">🌙 Dark Mode</button>
+    </div>
+</header>
+
+<main class="container">
+
+    <section class="controls">
+        <input type="text" id="search" placeholder="Yemek ara...">
+
+        <button class="filter active" data-country="all">🌍 Tümü</button>
+        <button class="filter" data-country="Italian">🇮🇹 İtalya</button>
+        <button class="filter" data-country="Japanese">🇯🇵 Japonya</button>
+        <button class="filter" data-country="Turkish">🇹🇷 Türkiye</button>
+
+        <button id="addMealBtn">+ Tarif Ekle</button>
+    </section>
+
+    <div id="loading" class="hidden">
+        Yükleniyor...
+    </div>
+
+    <section id="meals-container"></section>
+
+</main>
+
+<div id="modal" class="modal hidden">
+    <div class="modal-content">
+
+        <h2 id="modalTitle">Tarif Ekle</h2>
+
+        <form id="mealForm">
+
+            <input type="hidden" id="mealId">
+
+            <input type="text" id="mealName" placeholder="Tarif Adı" required>
+
+            <input type="text" id="mealCountry" placeholder="Ülke" required>
+
+            <textarea id="mealDesc" placeholder="Açıklama" required></textarea>
+
+            <button type="submit">Kaydet</button>
+
+        </form>
+
+    </div>
+</div>
+
+<div id="toast-container"></div>
+
+<script src="app.js"></script>
+
+</body>
+</html>
